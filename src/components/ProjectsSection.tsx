@@ -48,8 +48,8 @@ const ProjectsSection = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <div className="bg-card/50 backdrop-blur-sm rounded-xl p-6 border border-border hover:border-accent/40 transition-all duration-300 group">
+          {projects.map((project,i) => (
+            <div key={i} className="bg-card/50 backdrop-blur-sm rounded-xl p-6 border border-border hover:border-accent/40 transition-all duration-300 group">
               <div className="flex items-center justify-between mb-4">
                 <div className="text-primary group-hover:text-accent transition-colors duration-300">
                   {project.icon}
@@ -65,8 +65,8 @@ const ProjectsSection = () => {
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                {project.technologies.map((tech) => (
-                  <span className="px-2 py-1 rounded-full text-xs font-medium bg-secondary text-secondary-foreground">
+                {project.technologies.map((tech,i) => (
+                  <span key={i} className="px-2 py-1 rounded-full text-xs font-medium bg-secondary text-secondary-foreground">
                     {tech}
                   </span>
                 ))}

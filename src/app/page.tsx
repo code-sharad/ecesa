@@ -2,8 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import {  Cpu, CircuitBoard, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Cpu, CircuitBoard, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import AboutSection from "@/components/AboutSection";
@@ -11,6 +10,10 @@ import EventsSection from "@/components/EventsSection";
 import { colors } from "@/constants/colors";
 import { HyperText } from "@/components/magicui/hyper-text";
 import CTASection from "@/components/CTASection";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { LampContainer } from "@/components/ui/lamp";
+// import { DockNav } from "@/components/docknav";
 
 // Hero Section Component
 function HeroSection() {
@@ -18,7 +21,6 @@ function HeroSection() {
   return (
     <section className={`relative min-h-[90vh]  px-4 sm:px-6 lg:px-8 bg-${colors.background.primary} text-${colors.text.primary} overflow-hidden py-12 sm:py-16 lg:py-20 flex  md:items-center`}>
       <div className="container mx-auto relative z-10">
-        
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -26,33 +28,33 @@ function HeroSection() {
           className="text-center max-w-[85vw] sm:max-w-2xl lg:max-w-4xl mx-auto"
         >
           {/* Circuit Lines Animation */}
-            <motion.div
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
             className="relative mt-18 md:mt-0"
-            >
+          >
             <Badge
               variant="outline"
               className="flex justify-center items-center gap-4 mx-auto w-fit mb-8 px-4 py-1 text-base relative group hover:border-accent transition-colors duration-300 border-orange-400/20 bg-gradient-to-r from-orange-200 to-orange-500 bg-clip-text text-transparent"
             >
               <span className="text-muted-foreground group-hover:text-accent transition-colors duration-300 ">
-              Welcome to ECESA 
+                Welcome to ECESA
               </span>
               <span className="fill-none text-black">🎉</span>
               <motion.div
-              className="absolute -inset-1 bg-gradient-to-r from-orange-400/30 to-orange-600/40 rounded-full blur opacity-0 group-hover:opacity-100 transition-all duration-300"
-              initial={false}
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
+                className="absolute -inset-1 bg-gradient-to-r from-orange-400/30 to-orange-600/40 rounded-full blur opacity-0 group-hover:opacity-100 transition-all duration-300"
+                initial={false}
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               />
-              
+
             </Badge>
-            </motion.div>
+          </motion.div>
           <div className="absolute inset-0 -z-10 overflow-hidden">
             <motion.div
               className="absolute top-0 left-0 w-full h-full"
@@ -60,11 +62,11 @@ function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-             
+
             </motion.div>
           </div>
 
-          
+
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -116,15 +118,29 @@ function HeroSection() {
                   ease: "easeInOut",
                 }}
               />
-              <h1 className="relative mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-                <motion.span className={`inline-block bg-clip-text text-transparent bg-gradient-to-r from-${colors.text.heading.gradient.from} to-${colors.text.heading.gradient.to}`}>
-                  <HyperText className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl">ECESA</HyperText>
-                </motion.span>
-                <br />
-                <motion.span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--secondary))] to-[hsl(var(--primary))]">
-                  <HyperText>Student Association</HyperText>
-                </motion.span>
-              </h1>
+              <LampContainer>
+                <motion.div className="relative z-50 mt-8">
+                  <h1 className="relative mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+                    <motion.span
+                      className={`inline-block bg-clip-text text-transparent bg-gradient-to-b from-white via-orange-200 to-orange-500`}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5, duration: 0.8 }}
+                    >
+                      <HyperText className="text-[64px] sm:text-4xl md:text-6xl lg:text-7xl">ECESA</HyperText>
+                    </motion.span>
+                    <br />
+                    <motion.span
+                      className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-orange-200 to-orange-100"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.7, duration: 0.8 }}
+                    >
+                      <HyperText>Student Association</HyperText>
+                    </motion.span>
+                  </h1>
+                </motion.div>
+              </LampContainer>
 
               {/* Tech Icons with Animations */}
               <motion.div
@@ -172,7 +188,7 @@ function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
           >
-            <span className="transition-colors duration-300 ">
+            <span className="transition-colors duration-300 text-balance">
               Empowering students through technical workshops, projects, <br />
               and industry connections in electronics and computing.
             </span>
@@ -184,12 +200,9 @@ function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
           >
-            <Button
-              size="lg"
-              className={`px-8 group relative overflow-hidden bg-${colors.interactive.primary} hover:bg-${colors.interactive.hover} text-primary-foreground transition-all duration-300`}
-              asChild
-            >
-              <a href="/contact">
+
+            <Link href="/contact" >
+              <Button className={`px-8 group relative overflow-hidden bg-${colors.interactive.primary} hover:bg-${colors.interactive.hover} text-primary-foreground transition-all duration-300`}>
                 <span className="relative z-10 transition-colors duration-300 text-black">
                   Join Us
                 </span>
@@ -199,20 +212,16 @@ function HeroSection() {
                   whileHover={{ x: "0%" }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
                 />
-              </a>
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="px-8 group border-orange-500/50 hover:bg-orange-500/10 transition-all duration-300"
-              asChild
-            >
-              <a href="/about">
+              </Button>
+            </Link>
+
+            <Link href="/about" >
+              <Button className="px-8 group border-orange-500/50 hover:bg-orange-500/10 transition-all duration-300">
                 <span className="relative z-10 transition-colors duration-300">
                   Explore Events
                 </span>
-              </a>
-            </Button>
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
@@ -359,7 +368,8 @@ function FeaturesSection() {
 // Main Landing Page Component
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen pb-24">
+      {/* <DockNav /> */}
       <HeroSection />
       <FeaturesSection />
       <AboutSection />
