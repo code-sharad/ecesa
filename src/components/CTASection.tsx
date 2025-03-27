@@ -1,5 +1,6 @@
-import {motion} from "motion/react";
-import {Button} from "@/components/ui/button";
+import { motion } from "motion/react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 function CTASection() {
     return (
@@ -26,17 +27,19 @@ function CTASection() {
                         className="bg-orange-600 hover:bg-orange-700 text-white transition-all duration-300 group"
                         asChild
                     >
-                        <a href="/contact">
-                            <span className="relative z-10 transition-colors duration-300">
-                                Contact Us Today
-                            </span>
-                            <motion.div
-                                className="absolute inset-0 bg-orange-500/30"
-                                initial={{ x: "-100%" }}
-                                whileHover={{ x: "0%" }}
-                                transition={{ duration: 0.4, ease: "easeOut" }}
-                            />
-                        </a>
+                        <Link href="/contact">
+                            <>
+                                <span className="relative z-10 transition-colors duration-300">
+                                    Join Us
+                                </span>
+                                <motion.div
+                                    className="absolute inset-0 bg-orange-500/30"
+                                    initial={{ x: "-100%" }}
+                                    whileHover={{ x: "0%" }}
+                                    transition={{ duration: 0.4, ease: "easeOut" }}
+                                />
+                            </>
+                        </Link>
                     </Button>
                 </motion.div>
             </div>

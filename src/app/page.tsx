@@ -13,6 +13,7 @@ import CTASection from "@/components/CTASection";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { LampContainer } from "@/components/ui/lamp";
+import Footer from "@/components/Footer";
 // import { DockNav } from "@/components/docknav";
 
 // Hero Section Component
@@ -368,7 +369,7 @@ function FeaturesSection() {
 // Main Landing Page Component
 export default function Home() {
   return (
-    <main className="min-h-screen pb-24">
+    <main className="min-h-screen">
       {/* <DockNav /> */}
       <HeroSection />
       <FeaturesSection />
@@ -376,6 +377,7 @@ export default function Home() {
       <EventsSection />
       {/* <ProjectsSection /> */}
       <CTASection />
+      <Footer />
     </main>
   );
 }

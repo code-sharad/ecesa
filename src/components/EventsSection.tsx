@@ -96,7 +96,7 @@ const EventsSection = () => {
             </div>
             <div className="md:w-3/5 md:my-12 flex flex-col md:gap-2">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight bg-clip-text  bg-gradient-to-r from-orange-300 to-orange-100">
-                Artificial Intelligence Workshop
+                GenAI Workshop
               </h3>
               <div className="flex flex-wrap gap-4 lg:gap-8 text-sm sm:text-base text-zinc-200 mb-6">
                 <div className="flex items-center gap-2 bg-zinc-800/50 backdrop-blur-sm px-3 py-2 rounded-lg border border-zinc-700/30">
