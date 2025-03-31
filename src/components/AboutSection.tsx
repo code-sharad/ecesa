@@ -69,7 +69,7 @@ const AboutSection = () => {
   return (
     <section className="py-24 bg-gradient-to-b from-black to-zinc-900 relative">
       {/* Circuit board pattern overlay */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('/circuit-pattern.svg')] bg-repeat"></div>
+      <div className="absolute inset-0 opacity-5 pointer-events-none bg-repeat"></div>
 
       {/* Glowing orbs resembling electrical nodes */}
       <div className="absolute top-20 left-20 w-32 h-32 rounded-full bg-orange-500/20 blur-3xl"></div>
