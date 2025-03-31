@@ -1,6 +1,5 @@
 import { prisma } from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { Prisma } from '@prisma/client';
 
 export async function GET() {
     try {
@@ -15,7 +14,7 @@ export async function POST(req: Request) {
     try {
         const body = await req.json();
 
-        const studentData: Prisma.StudentCreateInput = {
+        const studentData = {
             name: body.name,
             email: body.email,
             phone: body.phone,
