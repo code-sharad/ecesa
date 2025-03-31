@@ -7,11 +7,11 @@ import { toast } from "sonner";
 
 interface RegisterDialogProps {
     open: boolean;
-    onOpenChange: (open: boolean) => void;
+    showDialog: (open: boolean) => void;
     workshop_id: string;
 }
 
-export function RegisterDialog({ open, onOpenChange, workshop_id }: RegisterDialogProps) {
+export function RegisterDialog({ open, showDialog, workshop_id }: RegisterDialogProps) {
     const [loading, setLoading] = useState(false);
     const [fistName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -29,7 +29,7 @@ export function RegisterDialog({ open, onOpenChange, workshop_id }: RegisterDial
         setLoading(true);
         formData.name = `${fistName} ${lastName}`;
         formData.workshopId = workshop_id
-            console.log(formData);
+        console.log(formData);
         try {
             const response = await fetch('/api/students', {
                 method: 'POST',
@@ -46,7 +46,7 @@ export function RegisterDialog({ open, onOpenChange, workshop_id }: RegisterDial
             toast.message('Registration successful!', {
                 description: "You have been registered successfully.",
             });
-            onOpenChange(false);
+            showDialog(false);
         } catch (error) {
             toast.error('Registration failed', {
                 description: error instanceof Error ? error.message : "Something went wrong",
@@ -58,9 +58,8 @@ export function RegisterDialog({ open, onOpenChange, workshop_id }: RegisterDial
 
     return (
         <>
-            <Dialog open={open} onOpenChange={onOpenChange}>
-                <DialogContent className="sm:max-w-[425px] border-zinc-800 dark text-white  ">
-               
+            <Dialog open={open} onOpenChange={showDialog} >
+                <DialogContent className="sm:max-w-[425px] border-zinc-800 dark text-white  fixed top-56">
 
                     <DialogHeader>
                         <DialogTitle>Register for ECESA</DialogTitle>
@@ -68,8 +67,8 @@ export function RegisterDialog({ open, onOpenChange, workshop_id }: RegisterDial
                             Join ECESA to participate in events and activities
                         </DialogDescription>
                     </DialogHeader>
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                        <div className="grid gap-4">
+                    <form onSubmit={handleSubmit} className="space-y-4 ">
+                        <div className="grid gap-4 ">
                             <div className='flex gap-4'>
                                 <Input placeholder='First Name' id='firstname' value={fistName} onChange={e => setFirstName(e.target.value)} required />
                                 <Input placeholder='Last Name' id='lastname' value={lastName} onChange={e => setLastName(e.target.value)} required />

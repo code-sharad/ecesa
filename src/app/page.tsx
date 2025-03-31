@@ -363,7 +363,7 @@ function HeroSection() {
                       <RegisterDialog
                         workshop_id={upcoming_event[0].id || ''}
                         open={showRegisterDialog}
-                        onOpenChange={setShowRegisterDialog}
+                        showDialog={setShowRegisterDialog}
                       />
                     </Button>
                   </div>
