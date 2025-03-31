@@ -1,7 +1,11 @@
 // lib/prisma.ts
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from '@prisma/client/edge';
 
-const globalForPrisma = global as unknown as { prisma: PrismaClient };
+declare global {
+    let prisma: PrismaClient | undefined;
+}
+
+const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
 
 export const prisma =
     globalForPrisma.prisma || new PrismaClient();
