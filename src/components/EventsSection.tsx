@@ -11,7 +11,7 @@ import Image from "next/image";
 const EventsSection = () => {
   const events = [
     {
-      title: "Annual Tech Fest 2024",
+      title: "Techno Spark 2025",
       date: "March 15-17, 2024",
       time: "9:00 AM - 6:00 PM",
       location: "College Auditorium",
@@ -21,7 +21,7 @@ const EventsSection = () => {
     },
     {
       title: "Arduino Workshop",
-      date: "March 25, 2024",
+      date: "March 25, 2025",
       time: "2:00 PM - 5:00 PM",
       location: "Lab 101",
       description:
@@ -30,7 +30,7 @@ const EventsSection = () => {
     },
     {
       title: "Project Showcase",
-      date: "April 5, 2024",
+      date: "April 5, 2025",
       time: "10:00 AM - 4:00 PM",
       location: "Innovation Hub",
       description:
@@ -38,8 +38,8 @@ const EventsSection = () => {
       category: "Showcase",
     },
     {
-      title: "Hackathon 2024",
-      date: "April 15-16, 2024",
+      title: "Hackathon 2025",
+      date: "April 15-16, 2025",
       time: "24 Hours",
       location: "Computer Center",
       description:

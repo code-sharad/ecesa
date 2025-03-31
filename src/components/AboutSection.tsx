@@ -102,7 +102,7 @@ const AboutSection = () => {
           className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
         >
           {features.map((feature, index) => (
-            <motion.div key={index} variants={itemVariants} className="max-w-[400px]">
+            <motion.div key={index} variants={itemVariants} className="max-w-[400px] mx-auto">
               <Card className="p-6 border border-zinc-800 bg-zinc-900/80 backdrop-blur-sm hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] transition-all duration-300 h-full">
                 <div className="text-orange-500 p-3 bg-orange-500/10 rounded-xl inline-flex mb-4">
                   {feature.icon}
