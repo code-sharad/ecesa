@@ -89,7 +89,6 @@ function HeroSection() {
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{
                     duration: 1.5,
-                    repeat: Infinity,
                     ease: "easeInOut",
                   }}
                 />
@@ -118,7 +117,7 @@ function HeroSection() {
               <motion.div
                 className={`absolute -inset-4 bg-${colors.background.glow.orange} rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-all duration-500`}
                 animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 4, ease: "easeInOut" }}
               />
               <div className={`relative group  `}>
                 {/* Circuit Lines */}
