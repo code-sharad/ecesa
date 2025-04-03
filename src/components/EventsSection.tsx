@@ -59,8 +59,8 @@ const EventsSection = () => {
 
       <div className="container mx-auto relative z-10">
         <div className="max-w-xl sm:max-w-2xl lg:max-w-3xl mx-auto text-center mb-8 sm:mb-12 lg:mb-16">
-          <Badge className="text-orange-400 text-sm my-4 px-4 bg-orange-950/50 border-orange-500/20">
-            Upcoming & Past
+          <Badge className="text-orange-400 tracking-widest text-sm my-4 px-4 bg-orange-950/50 border-orange-500/20">
+            EVENTS
           </Badge>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-200 bg-clip-text text-transparent mb-3 sm:mb-4">

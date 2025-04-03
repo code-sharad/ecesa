@@ -12,13 +12,13 @@ import { HyperText } from "@/components/magicui/hyper-text";
 import CTASection from "@/components/CTASection";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { LampContainer } from "@/components/ui/lamp";
 import Footer from "@/components/Footer";
 import TeamSection from "@/components/TeamSection";
 import Image from "next/image";
 import { RegisterDialog } from "@/components/RegisterDialog";
 import { Workshop } from "@/types";
 import UpcomingEventSkeleton from "@/components/skeleton/UpcomingEvent";
+import { ShinyButton } from "@/components/magicui/shiny-button";
 // import { DockNav } from "@/components/docknav";
 
 
@@ -68,43 +68,8 @@ function HeroSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center max-w-[85vw]  sm:max-w-2xl lg:max-w-4xl mx-auto"
           >
-            {/* Circuit Lines Animation */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
-              className="relative mt-18 md:mt-0"
-            >
-              <Badge
-                variant="outline"
-                className="flex justify-center items-center gap-4 mx-auto w-fit mb-8 px-4 py-1 text-base relative group hover:border-accent transition-colors duration-300 border-orange-400/20 bg-gradient-to-r from-orange-200 to-orange-500 bg-clip-text text-transparent"
-              >
-                <span className="text-muted-foreground group-hover:text-accent transition-colors duration-300 ">
-                  Welcome to ECESA
-                </span>
-                <span className="fill-none text-black">🎉</span>
-                <motion.div
-                  className="absolute -inset-1 bg-gradient-to-r from-orange-400/30 to-orange-600/40 rounded-full blur opacity-0 group-hover:opacity-100 transition-all duration-300"
-                  initial={false}
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{
-                    duration: 1.5,
-                    ease: "easeInOut",
-                  }}
-                />
 
-              </Badge>
-            </motion.div>
-            <div className="absolute inset-0 -z-10 overflow-hidden">
-              <motion.div
-                className="absolute top-0 left-0 w-full h-full"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-              >
-
-              </motion.div>
-            </div>
+           
 
 
 
@@ -158,8 +123,182 @@ function HeroSection() {
                     ease: "easeInOut",
                   }}
                 />
-                <LampContainer>
-                  <motion.div className="relative z-50 mt-8">
+                <div>
+                  <motion.div className="relative z-50 mt-8 mx-auto">
+                    <div className="flex justify-center mb-9 mt-32 md:mt-0 ">
+                      <motion.div
+                        className="relative"
+                        initial={{ opacity: 0.2 }}
+                        animate={{
+                          opacity: [0.5, 1, 0.5],
+                          scale: [0.95, 1.05, 0.95],
+                          rotate: [0, 5, 0]
+                        }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                      >
+                        {/* Multiple glow layers for depth */}
+                        <motion.div
+                          className="absolute inset-0 blur-3xl opacity-30"
+                          animate={{
+                            scale: [0.8, 1.2, 0.8]
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          }}
+                        >
+                          <Zap className="w-32 h-32" fill="url(#zapGradient)" />
+                        </motion.div>
+
+                        {/* High voltage lines */}
+                        <motion.div
+                          className="absolute inset-0 z-20"
+                          initial={{ opacity: 0.7 }}
+                          animate={{ opacity: [0.4, 0.9, 0.4] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                        >
+                          {/* Falling star 1 - diagonal top-left to bottom-right */}
+                          <motion.div
+                            className="absolute top-[-20px] left-[-20px] w-20 h-[2px] bg-gradient-to-br from-orange-200 to-transparent rotate-45"
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{
+                              x: [0, 60],
+                              y: [0, 60],
+                              opacity: [0, 1, 0],
+                              scale: [0, 1, 0]
+                            }}
+                            transition={{
+                              duration: 1.5,
+                              repeat: Infinity,
+                              repeatDelay: 1.2
+                            }}
+                          />
+
+                          {/* Falling star 2 - diagonal top-right to bottom-left */}
+                          <motion.div
+                            className="absolute top-[-20px] right-[-20px] w-20 h-[2px] bg-gradient-to-br from-orange-200 to-transparent rotate-45"
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{
+                              x: [-60, 0],
+                              y: [0, 60],
+                              opacity: [0, 1, 0],
+                              scale: [0, 1, 0]
+                            }}
+                            transition={{
+                              duration: 1.5,
+                              repeat: Infinity,
+                              repeatDelay: 0.8,
+                              delay: 0.5
+                            }}
+                          />
+
+                          {/* Falling star 3 - vertical top to bottom */}
+                          <motion.div
+                            className="absolute top-[-20px] left-[50%] w-[2px] h-20 bg-gradient-to-b from-orange-200 to-transparent"
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{
+                              y: [0, 60],
+                              opacity: [0, 1, 0],
+                              scale: [0, 1, 0]
+                            }}
+                            transition={{
+                              duration: 1.2,
+                              repeat: Infinity,
+                              repeatDelay: 1.5,
+                              delay: 1
+                            }}
+                          />
+
+                          {/* Trailing particles for star 1 */}
+                          <motion.div
+                            className="absolute top-[-15px] left-[-15px] w-2 h-2 rounded-full bg-orange-300"
+                            animate={{
+                              x: [0, 55],
+                              y: [0, 55],
+                              opacity: [0, 0.8, 0],
+                              scale: [0.5, 0.2, 0]
+                            }}
+                            transition={{
+                              duration: 1.5,
+                              repeat: Infinity,
+                              repeatDelay: 1.2
+                            }}
+                          />
+
+                          {/* Trailing particles for star 2 */}
+                          <motion.div
+                            className="absolute top-[-15px] right-[-15px] w-2 h-2 rounded-full bg-orange-300"
+                            animate={{
+                              x: [-55, 0],
+                              y: [0, 55],
+                              opacity: [0, 0.8, 0],
+                              scale: [0.5, 0.2, 0]
+                            }}
+                            transition={{
+                              duration: 1.5,
+                              repeat: Infinity,
+                              repeatDelay: 0.8,
+                              delay: 0.5
+                            }}
+                          />
+
+                          {/* Small twinkling stars around the icon */}
+                          <motion.div
+                            className="absolute left-[10%] top-[20%] w-1 h-1 rounded-full bg-orange-200"
+                            animate={{ opacity: [0, 1, 0] }}
+                            transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
+                          />
+                          <motion.div
+                            className="absolute right-[10%] bottom-[20%] w-1 h-1 rounded-full bg-orange-200"
+                            animate={{ opacity: [0, 1, 0] }}
+                            transition={{ duration: 1, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
+                          />
+                        </motion.div>
+
+                        <svg width="0" height="0">
+                          <defs>
+                            <linearGradient id="zapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stopColor="#f97316" />
+                              <stop offset="50%" stopColor="#ea580c" />
+                              <stop offset="100%" stopColor="#c2410c" />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+
+                        <Zap
+                          className="w-32 h-32 relative z-10"
+                          fill="url(#zapGradient)"
+                          stroke="#ffa066"
+                          strokeWidth={1.5}
+                        />
+
+                        {/* Flickering glow effect */}
+                        <motion.div
+                          className="absolute inset-0 blur-md z-0"
+                          animate={{
+                            opacity: [0.2, 0.6, 0.2],
+                            scale: [0.9, 1.1, 0.9]
+                          }}
+                          transition={{
+                            duration: 0.5,
+                            repeat: Infinity,
+                            repeatType: "reverse"
+                          }}
+                        >
+                          <Zap
+                            className="w-32 h-32"
+                            fill="none"
+                            stroke="rgba(249, 115, 22, 0.6)"
+                            strokeWidth={3}
+                          />
+                        </motion.div>
+                      </motion.div>
+                    </div>
                     <h1 className="relative mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
                       <motion.span
                         className={`inline-block bg-clip-text text-transparent bg-gradient-to-b from-white via-orange-200 to-orange-500`}
@@ -169,30 +308,32 @@ function HeroSection() {
                       >
                         <HyperText className="text-[64px] sm:text-4xl md:text-6xl lg:text-7xl">ECESA</HyperText>
                       </motion.span>
+
                       <br />
+
                       <motion.span
                         className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-orange-200 to-orange-100"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.7, duration: 0.8 }}
                       >
-                        <HyperText>Student Association</HyperText>
+                        <HyperText className="text-xl">Electronics & Computer Engineering Student Association</HyperText>
                       </motion.span>
                     </h1>
                   </motion.div>
-                </LampContainer>
+                </div>
 
                 {/* Tech Icons with Animations */}
                 <motion.div
                   className="absolute -right-4 -top-4 group-hover:text-accent/30 text-orange-600/20"
-                  animate={{ rotate: [0, 360] }}
+                  animate={{ scale: [1, 1.3, 1], rotate: [0, 45, 0] }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 >
                   <Cpu className="w-24 h-24" />
                 </motion.div>
                 <motion.div
                   className="absolute -left-4 -bottom-4 text-orange-500/20 transition-all duration-300 group-hover:text-orange-500/30"
-                  animate={{ rotate: [360, 0] }}
+                  animate={{ scale: [1, 1.3, 1], rotate: [0, 45, 0] }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 >
                   <CircuitBoard className="w-24 h-24" />
@@ -214,15 +355,10 @@ function HeroSection() {
                   <Zap className="w-16 h-16" />
                 </motion.div>
               </div>
-              <motion.div
-                className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-orange-500/50 to-transparent"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
-              />
+
             </motion.div>
 
-            <motion.p
+            {/* <motion.p
               className={`mb-6 sm:mb-8 text-base sm:text-lg mt-24 lg:mt-12 lg:text-xl max-w-xl sm:max-w-2xl mx-auto text-${colors.text.secondary} relative group`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -232,28 +368,27 @@ function HeroSection() {
                 Empowering students through technical workshops, projects, <br />
                 and industry connections in electronics and computing.
               </span>
-            </motion.p>
+            </motion.p> */}
 
             <motion.div
-              className="flex flex-col sm:flex-row mt-24 items-center justify-center gap-3 sm:gap-4 relative"
+              className="flex flex-col sm:flex-row mt-12 items-center justify-center gap-3 sm:gap-4 relative"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
             >
 
-              <Link href="/contact" >
-                <Button className={`px-8 group relative overflow-hidden bg-${colors.interactive.primary} hover:bg-${colors.interactive.hover} text-primary-foreground transition-all duration-300`}>
-                  <span className="relative z-10 transition-colors duration-300 text-black">
-                    Join Us
-                  </span>
+              <Button asChild className={`px-8 py-6 group relative -inset-2.5 shadow-inner overflow-hidden bg-gradient-to-r from-orange-300 to-orange-500 hover:from-orange-400 hover:to-orange-500 text-white border-none  shadow-orange-600/30 hover:shadow-orange-500/50 hover:scale-105 transition-all duration-300`} >
+                <Link href="/contact" >
+
+                  <ShinyButton >
+                    Join Now
+                  </ShinyButton>
+
                   <motion.div
-                    className="absolute inset-0 bg-orange-600/20"
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: "0%" }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    className="absolute -inset-1 rounded-xl blur-sm opacity-70 bg-orange-500/30 scale-0 group-hover:scale-100 transition-all duration-300"
                   />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
 
               {/* <Link href="/about" >
                 <Button className="px-8 group border-orange-500/50 hover:bg-orange-500/10 transition-all duration-300">
@@ -308,8 +443,8 @@ function HeroSection() {
       <motion.div initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
-        className="flex flex-col justify-center items-center mt-18 ">
-        <Badge className="w-fit  text-orange-400 text-sm my-4 px-4 bg-orange-950/50 border-orange-500/20">
+        className="flex flex-col justify-center items-center mt-18  ">
+        <Badge className="w-fit  text-orange-400 text-sm mt-24 mb-8 px-4 bg-orange-950/50 border-orange-500/20">
           Upcoming Event
         </Badge>
         {

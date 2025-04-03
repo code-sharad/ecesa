@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { Zap } from "lucide-react";
 
 export function LampContainer({
     children,
@@ -49,7 +50,8 @@ export function LampContainer({
                 />
 
                 {/* Light particles */}
-             
+
+
                 {/* Content area */}
                 <div className="relative z-50 ">
                     {children}

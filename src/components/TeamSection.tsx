@@ -59,13 +59,11 @@ const TeamSection = () => {
             <div className="max-w-7xl mx-auto relative">
                 {/* Section Header */}
                 <div className="relative z-10 mb-20">
-                    <h2 className="text-6xl font-bold text-center mb-6 tracking-tight">
+                    <h2 className="text-5xl font-bold text-center mb-6 tracking-tight">
                         <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-orange-200 via-orange-400 to-orange-200 
-                                       animate-text-shimmer">Our Team</span>
+                                       animate-text-shimmer">Meet Our Team</span>
                     </h2>
-                    <p className="text-lg text-gray-400 text-center max-w-2xl mx-auto leading-relaxed">
-                        Meet the dedicated individuals who make ECESA possible through innovation and leadership
-                    </p>
+                   
                 </div>
 
                 {/* Team Grid */}
