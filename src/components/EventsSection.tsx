@@ -28,15 +28,7 @@ const EventsSection = () => {
         "Learn the basics of Arduino programming and build your first project.",
       category: "Workshop",
     },
-    {
-      title: "Project Showcase",
-      date: "April 5, 2025",
-      time: "10:00 AM - 4:00 PM",
-      location: "Innovation Hub",
-      description:
-        "Showcase your innovative projects and get feedback from industry experts.",
-      category: "Showcase",
-    },
+
     {
       title: "Hackathon 2025",
       date: "April 15-16, 2025",
