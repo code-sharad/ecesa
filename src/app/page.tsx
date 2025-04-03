@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Cpu, CircuitBoard, Zap, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import AboutSection from "@/components/AboutSection";
+// import AboutSection from "@/components/AboutSection";
 import EventsSection from "@/components/EventsSection";
 import { colors } from "@/constants/colors";
 import { HyperText } from "@/components/magicui/hyper-text";
