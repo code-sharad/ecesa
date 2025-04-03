@@ -469,7 +469,7 @@ export default function Home() {
       <HeroSection />
       <FeaturesSection />
       <TeamSection />
-      <AboutSection />
+      {/* <AboutSection /> */}
       <EventsSection />
       {/* <ProjectsSection /> */}
       <CTASection />
