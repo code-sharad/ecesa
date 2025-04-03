@@ -105,14 +105,14 @@ const TeamSection = () => {
                                     <div className="flex justify-center gap-4">
                                         {member.social.linkedin && (
                                             <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer"
-                                                className="text-orange-400/60 hover:text-orange-400 transition-colors
+                                                className="text-orange-400/60 hover:text-orange-400 
                                                          transform hover:scale-110 transition-transform duration-300">
                                                 <Linkedin size={18} />
                                             </a>
                                         )}
                                         {member.social.github && (
                                             <a href={member.social.github} target="_blank" rel="noopener noreferrer"
-                                                className="text-orange-400/60 hover:text-orange-400 transition-colors
+                                                className="text-orange-400/60 hover:text-orange-400
                                                          transform hover:scale-110 transition-transform duration-300">
                                                 <Github size={18} />
                                             </a>
