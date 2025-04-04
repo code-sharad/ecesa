@@ -305,7 +305,7 @@ export default function HeroSection() {
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{ delay: 0.7, duration: 0.8 }}
                                             >
-                                                <span className="text-xl font-mono">Electronics & Computer Engineering Student Association</span>
+                                                <HyperText className="text-xl font-mono">Electronics & Computer Engineering Student Association</HyperText>
                                             </motion.span>
                                         </h1>
                                     </motion.div>

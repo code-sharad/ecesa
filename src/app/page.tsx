@@ -105,7 +105,7 @@ function FeaturesSection() {
 // Main Landing Page Component
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen !transform-gpu">
       {/* <DockNav /> */}
       <HeroSection />
       <FeaturesSection />
