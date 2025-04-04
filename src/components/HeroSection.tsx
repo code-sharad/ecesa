@@ -33,9 +33,6 @@ export default function HeroSection() {
     };
     useEffect(() => {
         fethUpcomingEvent()
-    }, [])
-
-    useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
         };
@@ -47,7 +44,8 @@ export default function HeroSection() {
         return () => {
             window.removeEventListener("resize", handleResize);
         };
-    }, []);
+    }, [])
+
 
 
     return (
@@ -112,141 +110,10 @@ export default function HeroSection() {
                                     }}
                                 />
                                 <div>
-                                    <motion.div className="relative z-50 mt-8 mx-auto">
+                                    <div className="relative z-50 mt-8 mx-auto">
                                         <div className="flex justify-center mb-9 mt-32 md:mt-0 ">
                                             <motion.div
-                                                className="relative"
-                                                initial={{ opacity: 0.2 }}
-                                                animate={{
-                                                    opacity: [0.5, 1, 0.5],
-                                                    scale: [0.95, 1.05, 0.95],
-                                                    rotate: [0, 5, 0]
-                                                }}
-                                                transition={{
-                                                    duration: 3,
-                                                    repeat: Infinity,
-                                                    ease: "easeInOut",
-                                                }}
-                                            >
-                                                {/* Multiple glow layers for depth */}
-                                                <motion.div
-                                                    className="absolute inset-0 blur-3xl opacity-30"
-                                                    animate={{
-                                                        scale: [0.8, 1.2, 0.8]
-                                                    }}
-                                                    transition={{
-                                                        duration: 2,
-                                                        repeat: Infinity,
-                                                        ease: "easeInOut",
-                                                    }}
-                                                >
-                                                    <Zap className="w-32 h-32" fill="url(#zapGradient)" />
-                                                </motion.div>
-
-                                                {/* High voltage lines */}
-                                                <motion.div
-                                                    className="absolute inset-0 z-20"
-                                                    initial={{ opacity: 0.7 }}
-                                                    animate={{ opacity: [0.4, 0.9, 0.4] }}
-                                                    transition={{ duration: 1.5, repeat: Infinity }}
-                                                >
-                                                    {/* Falling star 1 - diagonal top-left to bottom-right */}
-                                                    <motion.div
-                                                        className="absolute top-[-20px] left-[-20px] w-20 h-[2px] bg-gradient-to-br from-orange-200 to-transparent rotate-45"
-                                                        initial={{ opacity: 0, scale: 0 }}
-                                                        animate={{
-                                                            x: [0, 60],
-                                                            y: [0, 60],
-                                                            opacity: [0, 1, 0],
-                                                            scale: [0, 1, 0]
-                                                        }}
-                                                        transition={{
-                                                            duration: 1.5,
-                                                            repeat: Infinity,
-                                                            repeatDelay: 1.2
-                                                        }}
-                                                    />
-
-                                                    {/* Falling star 2 - diagonal top-right to bottom-left */}
-                                                    <motion.div
-                                                        className="absolute top-[-20px] right-[-20px] w-20 h-[2px] bg-gradient-to-br from-orange-200 to-transparent rotate-45"
-                                                        initial={{ opacity: 0, scale: 0 }}
-                                                        animate={{
-                                                            x: [-60, 0],
-                                                            y: [0, 60],
-                                                            opacity: [0, 1, 0],
-                                                            scale: [0, 1, 0]
-                                                        }}
-                                                        transition={{
-                                                            duration: 1.5,
-                                                            repeat: Infinity,
-                                                            repeatDelay: 0.8,
-                                                            delay: 0.5
-                                                        }}
-                                                    />
-
-                                                    {/* Falling star 3 - vertical top to bottom */}
-                                                    <motion.div
-                                                        className="absolute top-[-20px] left-[50%] w-[2px] h-20 bg-gradient-to-b from-orange-200 to-transparent"
-                                                        initial={{ opacity: 0, scale: 0 }}
-                                                        animate={{
-                                                            y: [0, 60],
-                                                            opacity: [0, 1, 0],
-                                                            scale: [0, 1, 0]
-                                                        }}
-                                                        transition={{
-                                                            duration: 1.2,
-                                                            repeat: Infinity,
-                                                            repeatDelay: 1.5,
-                                                            delay: 1
-                                                        }}
-                                                    />
-
-                                                    {/* Trailing particles for star 1 */}
-                                                    <motion.div
-                                                        className="absolute top-[-15px] left-[-15px] w-2 h-2 rounded-full bg-orange-300"
-                                                        animate={{
-                                                            x: [0, 55],
-                                                            y: [0, 55],
-                                                            opacity: [0, 0.8, 0],
-                                                            scale: [0.5, 0.2, 0]
-                                                        }}
-                                                        transition={{
-                                                            duration: 1.5,
-                                                            repeat: Infinity,
-                                                            repeatDelay: 1.2
-                                                        }}
-                                                    />
-
-                                                    {/* Trailing particles for star 2 */}
-                                                    <motion.div
-                                                        className="absolute top-[-15px] right-[-15px] w-2 h-2 rounded-full bg-orange-300"
-                                                        animate={{
-                                                            x: [-55, 0],
-                                                            y: [0, 55],
-                                                            opacity: [0, 0.8, 0],
-                                                            scale: [0.5, 0.2, 0]
-                                                        }}
-                                                        transition={{
-                                                            duration: 1.5,
-                                                            repeat: Infinity,
-                                                            repeatDelay: 0.8,
-                                                            delay: 0.5
-                                                        }}
-                                                    />
-
-                                                    {/* Small twinkling stars around the icon */}
-                                                    <motion.div
-                                                        className="absolute left-[10%] top-[20%] w-1 h-1 rounded-full bg-orange-200"
-                                                        animate={{ opacity: [0, 1, 0] }}
-                                                        transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
-                                                    />
-                                                    <motion.div
-                                                        className="absolute right-[10%] bottom-[20%] w-1 h-1 rounded-full bg-orange-200"
-                                                        animate={{ opacity: [0, 1, 0] }}
-                                                        transition={{ duration: 1, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
-                                                    />
-                                                </motion.div>
+                                                className="relative">
 
                                                 <svg width="0" height="0">
                                                     <defs>
@@ -266,17 +133,9 @@ export default function HeroSection() {
                                                 />
 
                                                 {/* Flickering glow effect */}
-                                                <motion.div
+                                                <div
                                                     className="absolute inset-0 blur-md z-0"
-                                                    animate={{
-                                                        opacity: [0.2, 0.6, 0.2],
-                                                        scale: [0.9, 1.1, 0.9]
-                                                    }}
-                                                    transition={{
-                                                        duration: 0.5,
-                                                        repeat: Infinity,
-                                                        repeatType: "reverse"
-                                                    }}
+
                                                 >
                                                     <Zap
                                                         className="w-32 h-32"
@@ -284,7 +143,7 @@ export default function HeroSection() {
                                                         stroke="rgba(249, 115, 22, 0.6)"
                                                         strokeWidth={3}
                                                     />
-                                                </motion.div>
+                                                </div>
                                             </motion.div>
                                         </div>
                                         <h1 className="relative mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
@@ -305,14 +164,14 @@ export default function HeroSection() {
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{ delay: 0.7, duration: 0.8 }}
                                             >
-                                                <HyperText className="text-xl font-mono">Electronics & Computer Engineering Student Association</HyperText>
+                                                <span className="text-xl font-mono uppercase tracking-wider leading-0.5">Electronics & Computer Engineering Student Association</span>
                                             </motion.span>
                                         </h1>
-                                    </motion.div>
+                                    </div>
                                 </div>
 
                                 {/* Tech Icons with Animations */}
-                                <motion.div
+                                {/* <motion.div
                                     className="absolute -right-4 -top-4 group-hover:text-accent/30 text-orange-600/20"
                                     animate={{ scale: [1, 1.3, 1], rotate: [0, 45, 0] }}
                                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -325,10 +184,10 @@ export default function HeroSection() {
                                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                                 >
                                     <CircuitBoard className="w-24 h-24" />
-                                </motion.div>
+                                </motion.div> */}
 
                                 {/* Animated Zap Icons */}
-                                <motion.div
+                                {/* <motion.div
                                     className="absolute -top-5 -left-16 -translate-y-1/2 text-orange-500/20 rotate-[20deg]"
                                     animate={{ opacity: [0.2, 0.8, 0.2] }}
                                     transition={{ duration: 2, repeat: Infinity }}
@@ -341,7 +200,7 @@ export default function HeroSection() {
                                     transition={{ duration: 2, repeat: Infinity, delay: 1 }}
                                 >
                                     <Zap className="w-16 h-16" />
-                                </motion.div>
+                                </motion.div> */}
                             </div>
 
                         </motion.div>
@@ -359,7 +218,7 @@ export default function HeroSection() {
             </motion.p> */}
 
                         <motion.div
-                            className="flex flex-col sm:flex-row mt-12 items-center justify-center gap-3 sm:gap-4 relative"
+                            className="flex flex-col sm:flex-row mt-56 items-center justify-center gap-3 sm:gap-4 relative"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
