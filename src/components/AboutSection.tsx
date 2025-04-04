@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Cpu, Lightbulb, Target, Users,  Book, Compass } from "lucide-react";
+import { Cpu, Lightbulb, Target, Users, Book, Compass } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
@@ -45,26 +45,7 @@ const AboutSection = () => {
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5
-      }
-    }
-  };
 
   return (
     <section className="py-24 bg-gradient-to-b from-black to-zinc-900 relative">
@@ -94,15 +75,12 @@ const AboutSection = () => {
           </p>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+        <div
+
           className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
         >
           {features.map((feature, index) => (
-            <motion.div key={index} variants={itemVariants} className="max-w-[400px] mx-auto">
+            <div key={index} className="max-w-[400px] mx-auto">
               <Card className="p-6 border border-zinc-800 bg-zinc-900/80 backdrop-blur-sm hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] transition-all duration-300 h-full">
                 <div className="text-orange-500 p-3 bg-orange-500/10 rounded-xl inline-flex mb-4">
                   {feature.icon}
@@ -110,15 +88,11 @@ const AboutSection = () => {
                 <h3 className="font-bold text-xl mb-3 text-orange-100">{feature.title}</h3>
                 <p className="text-zinc-400">{feature.description}</p>
               </Card>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+        <div
         >
           <Card className="p-8 mb-16 border border-zinc-800 bg-zinc-900/80 backdrop-blur-sm relative overflow-hidden">
             <div className="absolute -right-20 -top-20 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl"></div>
@@ -147,7 +121,7 @@ const AboutSection = () => {
               </div>
             </div>
           </Card>
-        </motion.div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0 }}
