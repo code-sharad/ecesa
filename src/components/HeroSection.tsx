@@ -8,7 +8,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { colors } from "@/constants/colors";
 import { HyperText } from "@/components/magicui/hyper-text";
-import { Cpu, CircuitBoard, Zap, ArrowRight } from "lucide-react";
+import { Zap, ArrowRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Card } from "./ui/card";
