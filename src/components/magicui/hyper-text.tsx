@@ -106,7 +106,7 @@ export function HyperText({
                 : characterSet[getRandomInt(characterSet.length)],
           ),
         );
-        iterationCount.current = iterationCount.current + 0.6;
+        iterationCount.current = iterationCount.current + 0.1;
       } else {
         setIsAnimating(false);
         clearInterval(interval);
