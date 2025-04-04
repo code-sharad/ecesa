@@ -218,7 +218,7 @@ export default function HeroSection() {
             </motion.p> */}
 
                         <motion.div
-                            className="flex flex-col sm:flex-row mt-56 items-center justify-center gap-3 sm:gap-4 relative"
+                            className="flex flex-col sm:flex-row mt-36 lg:mt-56 items-center justify-center gap-3 sm:gap-4 relative"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
