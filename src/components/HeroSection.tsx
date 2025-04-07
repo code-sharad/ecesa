@@ -32,7 +32,7 @@ export default function HeroSection() {
             },
         });
         const data = await res.json();
-        // setUpcomingEvent(data)
+        setUpcomingEvent(data)
         console.log(data);
     };
     useEffect(() => {
@@ -77,7 +77,6 @@ export default function HeroSection() {
             });
 
             const data = await response.json();
-            setUpcomingEvent(data[0])
             if (!response.ok) {
                 throw new Error(data.message || 'Something went wrong');
             }
