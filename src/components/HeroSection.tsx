@@ -7,7 +7,6 @@ import { ShinyButton } from "@/components/magicui/shiny-button";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { colors } from "@/constants/colors";
-import { HyperText } from "@/components/magicui/hyper-text";
 import { Zap, ArrowRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -17,6 +16,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { toast } from "sonner";
 import { Input } from "./ui/input";
+
+
 
 export default function HeroSection() {
 
@@ -31,7 +32,7 @@ export default function HeroSection() {
             },
         });
         const data = await res.json();
-        setUpcomingEvent(data)
+        // setUpcomingEvent(data)
         console.log(data);
     };
     useEffect(() => {
@@ -43,6 +44,7 @@ export default function HeroSection() {
 
         window.addEventListener("resize", handleResize);
         handleResize(); // Set initial width
+
 
         return () => {
             window.removeEventListener("resize", handleResize);
@@ -75,7 +77,7 @@ export default function HeroSection() {
             });
 
             const data = await response.json();
-
+            setUpcomingEvent(data[0])
             if (!response.ok) {
                 throw new Error(data.message || 'Something went wrong');
             }
@@ -199,7 +201,7 @@ export default function HeroSection() {
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{ delay: 0.5, duration: 0.8 }}
                                             >
-                                                <HyperText className="text-[64px] sm:text-4xl md:text-6xl lg:text-7xl">ECESA</HyperText>
+                                                <span className="text-[64px] font-mono uppercase sm:text-4xl md:text-6xl lg:text-7xl">ECESA</span>
                                             </motion.span>
 
                                             <br />
@@ -344,11 +346,9 @@ export default function HeroSection() {
                                 <Badge className="w-fit  text-orange-400 text-sm mt-24 mb-8 px-4 bg-orange-950/50 border-orange-500/20">
                                     Upcoming Event
                                 </Badge>
-                                <Card className="mb-12 max-w-[1200px] border-zinc-900 bg-gradient-to-r from-black/80 to-zinc-900/80 p-6 sm:p-8 lg:p-10 relative overflow-hidden backdrop-blur-sm shadow-2xl shadow-orange-900/30 rounded-2xl">
+                                <Card className="mb-12 max-w-[1200px] border-zinc-900 bg-gradient-to-r from-orange-900/10 to-orange-900/20 p-6 sm:p-8 lg:p-10 relative overflow-hidden backdrop-blur-sm inset-ring-zinc-900  rounded-2xl">
                                     {/* Background elements */}
-                                    <div className="absolute top-0 right-0 w-80 h-80 bg-orange-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 animate-pulse"></div>
-                                    <div className="absolute bottom-0 left-0 w-60 h-60 bg-orange-600/10 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/4"></div>
-                                    <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500/20 to-orange-600/5 rounded-2xl blur-sm opacity-50"></div>
+
 
                                     <div className="relative z-10 flex flex-col md:flex-row gap-8">
                                         <div className="md:w-2/5 flex-shrink-0 mb-6 md:mb-0">
