@@ -217,52 +217,10 @@ export default function HeroSection() {
                                     </div>
                                 </div>
 
-                                {/* Tech Icons with Animations */}
-                                {/* <motion.div
-                                    className="absolute -right-4 -top-4 group-hover:text-accent/30 text-orange-600/20"
-                                    animate={{ scale: [1, 1.3, 1], rotate: [0, 45, 0] }}
-                                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                                >
-                                    <Cpu className="w-24 h-24" />
-                                </motion.div>
-                                <motion.div
-                                    className="absolute -left-4 -bottom-4 text-orange-500/20 transition-all duration-300 group-hover:text-orange-500/30"
-                                    animate={{ scale: [1, 1.3, 1], rotate: [0, 45, 0] }}
-                                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                                >
-                                    <CircuitBoard className="w-24 h-24" />
-                                </motion.div> */}
 
-                                {/* Animated Zap Icons */}
-                                {/* <motion.div
-                                    className="absolute -top-5 -left-16 -translate-y-1/2 text-orange-500/20 rotate-[20deg]"
-                                    animate={{ opacity: [0.2, 0.8, 0.2] }}
-                                    transition={{ duration: 2, repeat: Infinity }}
-                                >
-                                    <Zap className="w-16 h-16 fill-orange-400" />
-                                </motion.div>
-                                <motion.div
-                                    className="absolute rotate-[25deg] -bottom-28 -right-8 -translate-y-1/2 text-orange-500/20"
-                                    animate={{ opacity: [0.2, 0.8, 0.2] }}
-                                    transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                                >
-                                    <Zap className="w-16 h-16" />
-                                </motion.div> */}
                             </div>
 
                         </motion.div>
-
-                        {/* <motion.p
-              className={`mb-6 sm:mb-8 text-base sm:text-lg mt-24 lg:mt-12 lg:text-xl max-w-xl sm:max-w-2xl mx-auto text-${colors.text.secondary} relative group`}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
-            >
-              <span className="transition-colors duration-300 text-balance ">
-                Empowering students through technical workshops, projects, <br />
-                and industry connections in electronics and computing.
-              </span>
-            </motion.p> */}
 
                         <motion.div
                             className="flex flex-col sm:flex-row mt-36 lg:mt-56 items-center justify-center gap-3 sm:gap-4 relative"
@@ -284,13 +242,7 @@ export default function HeroSection() {
                                 </Link>
                             </Button>
 
-                            {/* <Link href="/about" >
-                <Button className="px-8 group border-orange-500/50 hover:bg-orange-500/10 transition-all duration-300">
-                  <span className="relative z-10 transition-colors duration-300">
-                    Explore Events
-                  </span>
-                </Button>
-              </Link> */}
+
                         </motion.div>
                     </motion.div>
                 </div>
