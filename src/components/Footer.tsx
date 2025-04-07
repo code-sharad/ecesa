@@ -2,24 +2,23 @@
 
 import React from "react";
 import Link from "next/link";
-import {  Github, Linkedin, X, Youtube } from "lucide-react";
-// import { Icons } from "@/components/docknav";
+import { Github, Linkedin, X, Youtube } from "lucide-react";
 
 export default function Footer() {
     return (
         <footer className="bg-black text-zinc-400 py-8">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Logo and Description */}
-                    <div className="text-center sm:text-left">
+                    <div className="text-center md:text-left">
                         <h2 className="text-lg font-bold text-orange-500">ECESA</h2>
-                        <p className="text-sm">
+                        <p className="text-sm mt-2">
                             Empowering students in electronics and computing.
                         </p>
                     </div>
 
                     {/* Navigation Links */}
-                    <div className="flex flex-wrap justify-center sm:justify-start gap-4">
+                    <div className="grid grid-cols-2 gap-4 text-center md:text-left">
                         <Link href="/about" className="hover:text-orange-500 transition-colors">
                             About
                         </Link>
@@ -29,10 +28,19 @@ export default function Footer() {
                         <Link href="/contact" className="hover:text-orange-500 transition-colors">
                             Contact
                         </Link>
+                        <Link href="/legal" className="hover:text-orange-500 transition-colors">
+                            Terms and Conditions
+                        </Link>
+                        <Link href="/refund" className="hover:text-orange-500 transition-colors">
+                            Refund Policy
+                        </Link>
+                        <Link href="/contact-us" className="hover:text-orange-500 transition-colors">
+                            Contact Us
+                        </Link>
                     </div>
 
                     {/* Social Icons */}
-                    <div className="flex gap-4">
+                    <div className="flex justify-center md:justify-end gap-4">
                         <Link href="#" aria-label="GitHub" className="hover:text-orange-500">
                             <Github className="w-5 h-5" />
                         </Link>
@@ -49,7 +57,7 @@ export default function Footer() {
                 </div>
 
                 {/* Copyright */}
-                <div className="mt-6 text-center text-sm">
+                <div className="mt-8 text-center text-sm border-t border-zinc-800 pt-8">
                     © {new Date().getFullYear()} ECESA. All rights reserved.
                 </div>
             </div>

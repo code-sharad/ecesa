@@ -1,4 +1,4 @@
-import PaymentButton from "@/components/PaymentButton";
+// import PaymentButton from "@/components/PaymentButton";
 
 export default function Page() {
     const response = [
@@ -115,7 +115,7 @@ export default function Page() {
                             {workshop.description}
                         </p>
 
-                        <PaymentButton amount={50} />
+                        {/* <PaymentButton amount={50} /> */}
 
                         {/* Key Information */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
