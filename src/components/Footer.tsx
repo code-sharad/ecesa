@@ -24,9 +24,6 @@ export default function Footer() {
                         <Link href="/events" className="hover:text-orange-500 transition-colors">
                             Events
                         </Link>
-                        <Link href="/contact" className="hover:text-orange-500 transition-colors">
-                            Contact
-                        </Link>
                         <Link href="/legal" className="hover:text-orange-500 transition-colors">
                             Terms and Conditions
                         </Link>

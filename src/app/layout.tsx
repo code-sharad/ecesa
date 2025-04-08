@@ -34,7 +34,7 @@ export default function RootLayout({
         </head>
 
         <body
-          className={`${geistSans.variable} ${geistMono.variable} bg-${colors.background.primary} antialiased scroll-smooth`}
+          className={`${geistSans.variable} ${geistMono.variable} bg-${colors.background.primary} antialiased scroll-smooth flex flex-col gap-8`}
         >
           <Navbar />
           <Toaster />
