@@ -39,6 +39,7 @@ export async function POST(req:Request) {
             status: "COMPLETED",
             paymentId: razorpayPaymentId,
             id: razorpayOrderId,
+            amount: 1000,
         }
     })
 

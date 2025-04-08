@@ -4,9 +4,10 @@ import { NextResponse } from 'next/server'
 
 export async function GET() {
     try {
-        
+
         const workshops = await prisma.workshop.findMany({
-            include: { students: true }
+            include: { students: true },
+            cacheStrategy: { ttl: 60 }
         });
         return NextResponse.json(workshops.reverse());
     } catch (error) {

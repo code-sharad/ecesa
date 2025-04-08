@@ -47,7 +47,7 @@ export default function Page() {
                 {/* Prohibited Actions */}
                 <section>
                     <h2 className="text-2xl font-semibold mt-8 mb-4 ">Prohibited Actions</h2>
-                    <div className="bg-gray-50 p-6 rounded-lg">
+                    <div className="bg-red-100 p-6 rounded-lg">
                         <ul className="list-disc pl-6 space-y-2 text-black">
                             <li>Systematically retrieve data without permission</li>
                             <li>Make unauthorized use of the Platform</li>

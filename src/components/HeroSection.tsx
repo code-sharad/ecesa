@@ -1,4 +1,4 @@
-
+'use client';
 import Image from "next/image";
 import { RegisterDialog } from "@/components/RegisterDialog";
 import { Workshop } from "@/types";
@@ -8,7 +8,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { colors } from "@/constants/colors";
 import { Zap, ArrowRight } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Card } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -102,20 +102,17 @@ export default function HeroSection() {
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
                         className="text-center max-w-[85vw]  sm:max-w-2xl lg:max-w-4xl mx-auto"
                     >
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+                        <div
+
                             className="relative "
                         >
                             <motion.div
                                 className={`absolute -inset-4 bg-${colors.background.glow.orange} rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-all duration-500`}
-                                animate={{ scale: [1, 1.1, 1] }}
-                                transition={{ duration: 4, ease: "easeInOut" }}
+
                             />
                             <div className={`relative group  `}>
                                 {/* Circuit Lines */}
@@ -123,27 +120,23 @@ export default function HeroSection() {
                                     className={`absolute -inset-24 -inset-y-32 border border-orange-500/10 rounded-lg  ${windowsWidth > 600 ? 'visible' : ' border-none'} `}
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
-                                    transition={{ duration: 1 }}
+                                    transition={{ duration: 0.8, ease: "easeInOut" }}
                                 >
-                                    <motion.div
+                                    <div
                                         className="absolute top-0 left-0 w-4 h-4 border-t border-l border-orange-400"
-                                        animate={{ opacity: [0.2, 0.8, 0.2] }}
-                                        transition={{ duration: 2, repeat: Infinity }}
+
                                     />
-                                    <motion.div
+                                    <div
                                         className="absolute top-0 right-0 w-4 h-4 border-t border-r border-orange-400"
-                                        animate={{ opacity: [0.2, 0.8, 0.2] }}
-                                        transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+
                                     />
-                                    <motion.div
+                                    <div
                                         className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-orange-400"
-                                        animate={{ opacity: [0.2, 0.8, 0.2] }}
-                                        transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+
                                     />
-                                    <motion.div
+                                    <div
                                         className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-orange-400"
-                                        animate={{ opacity: [0.2, 0.8, 0.2] }}
-                                        transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
+
                                     />
                                 </motion.div>
 
@@ -198,7 +191,7 @@ export default function HeroSection() {
                                                 className={`inline-block bg-clip-text text-transparent bg-gradient-to-b from-white via-orange-200 to-orange-500`}
                                                 initial={{ opacity: 0, y: 20 }}
                                                 animate={{ opacity: 1, y: 0 }}
-                                                transition={{ delay: 0.5, duration: 0.8 }}
+                                                transition={{ delay: 0.5, duration: 0.4 }}
                                             >
                                                 <span className="text-[64px] font-mono uppercase sm:text-4xl md:text-6xl lg:text-7xl">ECESA</span>
                                             </motion.span>
@@ -209,7 +202,7 @@ export default function HeroSection() {
                                                 className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-orange-200 to-orange-100"
                                                 initial={{ opacity: 0, y: 20 }}
                                                 animate={{ opacity: 1, y: 0 }}
-                                                transition={{ delay: 0.7, duration: 0.8 }}
+                                                transition={{ delay: 0.7, duration: 0.4 }}
                                             >
                                                 <span className="text-xl font-mono uppercase tracking-wider leading-0.5">Electronics & Computer Engineering Student Association</span>
                                             </motion.span>
@@ -220,7 +213,7 @@ export default function HeroSection() {
 
                             </div>
 
-                        </motion.div>
+                        </div>
 
                         <motion.div
                             className="flex flex-col sm:flex-row mt-36 lg:mt-56 items-center justify-center gap-3 sm:gap-4 relative"
@@ -288,10 +281,14 @@ export default function HeroSection() {
             </div>
             <motion.div initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
+                transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
                 className="flex flex-col justify-center items-center mt-18  ">
                 {
-                    upcoming_event.length !== 0 ? (
+
+                }
+
+                <Suspense fallback={<UpcomingEventSkeleton />}>
+                    {upcoming_event.length !== 0 ? (
                         upcoming_event.length > 0 && (
                             <>
                                 <Badge className="w-fit  text-orange-400 text-sm mt-24 mb-8 px-4 bg-orange-950/50 border-orange-500/20">
@@ -422,8 +419,8 @@ export default function HeroSection() {
                                 </Card>
                             </>
                         )
-                    ) : <UpcomingEventSkeleton />
-                }
+                    ) : "No upcoming events found."}
+                </Suspense>
             </motion.div>
         </section>
     );

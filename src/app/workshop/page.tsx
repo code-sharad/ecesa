@@ -1,5 +1,7 @@
 // import PaymentButton from "@/components/PaymentButton";
 
+import Image from "next/image";
+
 export default function Page() {
     const response = [
         {
@@ -93,7 +95,7 @@ export default function Page() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Workshop Image */}
                     <div className="relative rounded-2xl overflow-hidden mb-16">
-                        <img
+                        <Image
                             src={workshop.image}
                             alt={workshop.name}
                             className="w-full h-[600px] object-cover"

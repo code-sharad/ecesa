@@ -4,7 +4,6 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import { colors } from "@/constants/colors";
 import Navbar from "@/components/Navbar";
-import Script from "next/script"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,7 +41,6 @@ export default function RootLayout({
           {children}
         </body>
       </html>
-      <Script src="https://checkout.razorpay.com/v1/checkout.js" />
     </>
 
   );
