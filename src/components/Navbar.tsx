@@ -20,7 +20,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link
             href="/"
-            className={`text-2xl font-extrabold ${path === '/' ? 'bg-[#f2a470]' : ''} mr-2 bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent hover:scale-105 transition-transform`}
+            className={`text-2xl font-extrabold  mr-2 bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent hover:scale-105 transition-transform`}
           >
             <Zap fill="#d45f29" stroke="#f2a470" className="size-8" />
           </Link>
