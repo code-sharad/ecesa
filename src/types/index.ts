@@ -11,6 +11,8 @@ export interface Workshop {
     time: string;
     createdAt: Date;
     updatedAt: Date;
+    fee?: number | null;
+    status?: string;
 }
 
 export interface Student {
@@ -25,3 +27,4 @@ export interface Student {
     createdAt: Date;
     updatedAt: Date;
 }
+

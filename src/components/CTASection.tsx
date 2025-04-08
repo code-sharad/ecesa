@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -6,12 +5,9 @@ function CTASection() {
     return (
         <section className="bg-gradient-to-b from-black to-zinc-900 py-20">
             <div className="container mx-auto px-4">
-                <motion.div
+                <div
                     className="rounded-2xl border-zinc-800 bg-zinc-900/80 backdrop-blur-sm relative overflow-hidden  p-8 text-center sm:p-16 border  hover:border-orange-500/10 transition-all duration-300 group hover:shadow-lg hover:shadow-gray-900/10"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    viewport={{ once: true }}
+
                 >
                     <div className="absolute -right-20 -top-20 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl"></div>
                     <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -32,16 +28,10 @@ function CTASection() {
                                 <span className="relative z-10 transition-colors duration-300">
                                     Join Us
                                 </span>
-                                <motion.div
-                                    className="absolute inset-0 bg-orange-500/30"
-                                    initial={{ x: "-100%" }}
-                                    whileHover={{ x: "0%" }}
-                                    transition={{ duration: 0.4, ease: "easeOut" }}
-                                />
                             </>
                         </Link>
                     </Button>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

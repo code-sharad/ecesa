@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "app/generated/prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Workshop {
+  id          String    @id @default(cuid())
+  name        String
+  description String
+  date        String
+  time        String
+  duration    String
+  location    String
+  capacity    Int
+  instructor  String[]
+  fee         Float?
+  image       String
+  status      String    @default("upcoming")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  orders      Order[]
+  students    Student[]
+}
+
+model Order {
+  id         String        @id @default(cuid())
+  workshopId String
+  studentId  String
+  status     PaymentStatus @default(PENDING)
+  paymentId  String?
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+  amount     Float
+  student    Student       @relation(fields: [studentId], references: [id])
+  workshop   Workshop      @relation(fields: [workshopId], references: [id])
+}
+
+model Student {
+  id         String   @id @default(cuid())
+  name       String
+  email      String   @unique
+  branch     String
+  year       Int
+  phone      String
+  workshopId String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  orders     Order[]
+  workshop   Workshop @relation(fields: [workshopId], references: [id])
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+}

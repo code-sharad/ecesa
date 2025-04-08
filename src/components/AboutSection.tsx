@@ -1,6 +1,4 @@
-"use client";
 
-import React from "react";
 import { Button } from "@/components/ui/button";
 import { Cpu, Lightbulb, Target, Users, Book, Compass } from "lucide-react";
 import { Card } from "@/components/ui/card";

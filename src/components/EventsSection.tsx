@@ -1,7 +1,3 @@
-"use client";
-
-import React from "react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "./ui/badge";
 
@@ -83,14 +79,14 @@ const EventsSection = () => {
           ))}
         </div>
 
-        <motion.div className="text-center mt-8 sm:mt-12 lg:mt-16">
+        <div className="text-center mt-8 sm:mt-12 lg:mt-16">
           <Button
             className="bg-black hover:bg-zinc-900 text-orange-300 border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300"
             asChild
           >
             <a href="/events">View All Events</a>
           </Button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-"use client";
+export const runtime = 'edge'
 
 
 // import AboutSection from "@/components/AboutSection";
@@ -92,7 +92,7 @@ import HeroSection from "@/components/HeroSection";
 // Main Landing Page Component
 export default function Home() {
   return (
-    <main className="min-h-screen !transform-gpu">
+    <main className="min-h-screen ">
       {/* <DockNav /> */}
       <HeroSection />
       {/* <FeaturesSection /> */}
