@@ -75,7 +75,7 @@ async function UpcomingEventCard() {
                                                         </div>
 
                                                         <Link href={`/events/${event.id}`} className="w-full mt-12 md:w-56 rounded-lg transition-all duration-300">
-                                                            <Button variant={"secondary"} className="w-full py-8 md:w-56 bg-gradient-to-r from-orange-300/60 to-orange-500/80 hover:from-orange-400/70 hover:to-orange-600/90 text-white cursor-pointer transform hover:scale-105 hover:shadow-lg transition-all duration-300 backdrop-blur-sm px-6 text-sm font-medium group">
+                                                            <Button variant={"secondary"} className="w-full py-8 md:w-56 bg-black hover:bg-zinc-900 text-orange-300 border border-orange-500/20 hover:border-orange-500/40 transition-all  cursor-pointer  group">
                                                                 Join Event 🎉
                                                                 <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                                                             </Button>
