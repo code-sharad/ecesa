@@ -29,21 +29,68 @@ const teamMembers: TeamMember[] = [
         role: "Vice President",
         image: "/team/vice_president.jpg"
     }, {
-        name: "Sharad Bhadait",
-        role: "Vice President",
-        image: "/team/vice_president.jpg"
+        name: "Chaitanya Mohare ",
+        role: "Sports Head",
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744225458/ecesa/team/jiehjr6j6vveiscptavs.jpg"
     }, {
-        name: "Sharad Bhadait",
-        role: "Vice President",
-        image: "/team/vice_president.jpg"
+        name: "Shree Gajbhiye",
+        role: "Co Event Head And Cultural Secretary",
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744225602/ecesa/team/rl6lx7zum5e0sbx9tjyv.png"
     }, {
-        name: "Sharad Bhadait",
-        role: "Vice President",
-        image: "/team/vice_president.jpg"
+        name: "Aditya Deshpande ",
+        role: "Co-Technical Head ",
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744225705/ecesa/team/kcues44lus85bdtk6m4a.jpg"
     }, {
-        name: "Sharad Bhadait",
-        role: "Vice President",
-        image: "/team/vice_president.jpg"
+        name: "Pramod Dwarkunde ",
+        role: "Co-Creative Head",
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744225791/ecesa/team/u8epfnpcu5mqnh64rel7.png"
+    },
+    {
+        name: "Vivek Jadhav ",
+        role: "Social Media Lead ",
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744225852/ecesa/team/fv2os3ynvgwfnkrj1apq.jpg"
+    },
+    {
+        name: "Ganesh Shinde",
+        role: "Sports co head",
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744225898/ecesa/team/uuqdlhdaehuly5fbowvu.jpg"
+    },
+    {
+        name: "Dipesh Patekar  ",
+        role: "Social Media Head",
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744225952/ecesa/team/u4rlkoqxf5y4hqkmubfw.jpg"
+    }, {
+        name: "Gauri Sutar",
+        role: "Creative Head",
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744226005/ecesa/team/evqrhhpfnkpuilqdbzxy.jpg"
+    },{
+        name: "Yash Ghodele",
+        role: "Event Head",
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744226052/ecesa/team/xu9azqrryp50pyg8u7oy.jpg"
+    }, {
+        name: "Mohan Birajdar ",
+        role: "Treasurer",
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744226110/ecesa/team/wccgwwozskecsiwxnddq.png"
+    }, {
+        name: "Durvesh Sonar ",
+        role: "Robotics",
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744226188/ecesa/team/fqy3bh5eo5gqdb9omngo.jpg"
+    }, {
+        name: "Nandini Jagdale",
+        role: "Co-treasurer",
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744226231/ecesa/team/lwwqvizz6qamelxxua7t.jpg"
+    }, {
+        name: "Mankar Atul  ",
+        role: "Creative co-head",
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744226306/ecesa/team/othpdqjrv6a9hjzf9sly.png"
+    }, {
+        name: "Vrushali Deshmukh ",
+        role: "Social Media Head ",
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744226425/ecesa/team/vwsjmrnymlsomyyu9wer.jpg"
+    }, {
+        name: "Sakshi Kapure",
+        role: "Co- Event Head",
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744226306/ecesa/team/othpdqjrv6a9hjzf9sly.png"
     },
     // Add more team members as needed
 ];

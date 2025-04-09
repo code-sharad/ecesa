@@ -46,9 +46,7 @@ async function UpcomingEventCard() {
                                                                 </div>
 
                                                             </div>
-                                                            {event.price && (<span className="absolute top-2 right-2 p-4 bg-zinc-800/50 backdrop-blur-sm px-3 py-2 rounded-full border border-zinc-700/30">
-                                                                ₹{event.price}
-                                                            </span>)}
+
                                                         </div>
                                                     </div>
                                                     <div className="md:w-3/5 md:my-12 flex flex-col md:gap-2 ">
@@ -72,12 +70,17 @@ async function UpcomingEventCard() {
                                                             <div className="hidden md:block  items-center gap-2 bg-zinc-800/50 backdrop-blur-sm px-3 py-2 rounded-lg border border-zinc-700/30">
                                                                 {event.description.slice(1, 100)}
                                                             </div>
+                                                            {event.price && (<span className=" p-4 text-green-500 bg-green-800/20 backdrop-blur-sm px-3 py-2 rounded-md border border-zinc-700/30">
+                                                                ₹{event.price}
+                                                            </span>)}
                                                         </div>
 
-                                                        <Link href={`/events/${event.id}`} className="w-full mt-12 md:w-56 rounded-lg transition-all duration-300">
-                                                            <Button variant={"secondary"} className="w-full py-8 md:w-56 bg-black hover:bg-zinc-900 text-orange-300 border border-orange-500/20 hover:border-orange-500/40 transition-all  cursor-pointer  group">
-                                                                Join Event 🎉
-                                                                <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                                                        <Link href={`/events/${event.id}`} className="cursor-pointer">
+                                                            <Button
+                                                                variant="ghost"
+                                                                className="w-full py-6 bg-orange-950/20 cursor-pointer hover:bg-orange-950/40 text-orange-300 border border-orange-500/20 hover:border-orange-500/40"
+                                                            >
+                                                                View Details →
                                                             </Button>
                                                         </Link>
                                                     </div>
