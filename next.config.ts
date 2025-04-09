@@ -2,15 +2,17 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  images:{
+  images: {
     remotePatterns: [
       {
-        hostname: "images.unsplash.com",
-      },
-      {
-        hostname: "xaltiusacademy.com",
+        hostname: "res.cloudinary.com"
       }
     ]
+  }
+  , experimental: {
+    serverActions: {
+      bodySizeLimit: "6mb",
+    }
   }
 };
 

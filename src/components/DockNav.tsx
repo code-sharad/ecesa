@@ -140,7 +140,7 @@ export function DockNav({ classname }: { classname?: string }) {
                                                 "size-12 rounded-full",
                                             )}
                                         >
-                                            <Button variant={"glow"}>
+                                            <Button >
                                                 <social.icon className="size-4" />
                                             </Button>
                                         </Link>

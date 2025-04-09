@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "./ui/badge";
+import Link from "next/link";
 
 const EventsSection = () => {
   const events = [
@@ -84,7 +85,7 @@ const EventsSection = () => {
             className="bg-black hover:bg-zinc-900 text-orange-300 border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300"
             asChild
           >
-            <a href="/events">View All Events</a>
+            <Link href="/events">View All Events</Link>
           </Button>
         </div>
       </div>

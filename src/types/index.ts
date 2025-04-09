@@ -9,10 +9,12 @@ export interface Workshop {
     image?: string;
     instructor: string[];
     time: string;
-    createdAt: Date;
-    updatedAt: Date;
-    fee?: number | null;
+    createdAt?: Date;
+    updatedAt?: Date;
+    price?: number | null;
     status?: string;
+    isTeamWorkshop?: boolean;  
+    maxTeamSize?: number;  
 }
 
 export interface Student {
