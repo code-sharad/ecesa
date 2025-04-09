@@ -51,16 +51,15 @@ export default function Page() {
                                     <Image
                                         width={400}
                                         height={200}
-                                        src={event.image}
+                                        src={event.image || ''}
                                         alt={event.name}
                                         className="w-full h-48 object-cover"
                                     />
                                     <div className="absolute top-4 right-4">
-                                        <span className={`px-3 py-1 rounded-full text-xs font-medium uppercase ${
-                                            event.status === 'upcoming' ? 'bg-green-500' :
-                                            event.status === 'ongoing' ? 'bg-orange-500' :
-                                            'bg-red-500'
-                                        }`}>
+                                        <span className={`px-3 py-1 rounded-full text-xs font-medium uppercase ${event.status === 'upcoming' ? 'bg-green-500' :
+                                                event.status === 'ongoing' ? 'bg-orange-500' :
+                                                    'bg-red-500'
+                                            }`}>
                                             {event.status}
                                         </span>
                                     </div>
