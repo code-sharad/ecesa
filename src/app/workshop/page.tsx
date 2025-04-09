@@ -87,21 +87,23 @@ export default function Page() {
     const studentCount = workshop.students.length;
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+        <div className="min-h-screen bg-gradient-to-b from-orange-900 to-black text-white">
             {/* Hero Section */}
 
             <div className="relative py-20 pt-32">
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Workshop Image */}
-                    <div className="relative rounded-2xl overflow-hidden mb-16">
+                    <div className="relative rounded-2xl overflow-hidden mb-8 md:mb-16">
                         <Image
+                            width={1000}
+                            height={300}
                             src={workshop.image}
                             alt={workshop.name}
-                            className="w-full h-[600px] object-cover"
+                            className="w-full h-[300px] md:h-[400px] lg:h-[600px] object-cover"
                         />
-                        <div className="absolute top-6 right-6">
-                            <span className="bg-blue-500 px-6 py-2 rounded-full text-sm font-medium uppercase tracking-wider">
+                        <div className="absolute top-4 right-4 md:top-6 md:right-6">
+                            <span className="bg-orange-500 px-3 py-1 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-medium uppercase tracking-wider">
                                 {workshop.status}
                             </span>
                         </div>
@@ -109,7 +111,7 @@ export default function Page() {
                     <div className="relative z-10">
                         {/* Workshop Title and Description */}
                         <h1 className="text-6xl font-bold tracking-tight mb-6">
-                            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-orange-400 to-purple-500 bg-clip-text text-transparent">
                                 {workshop.name}
                             </span>
                         </h1>
