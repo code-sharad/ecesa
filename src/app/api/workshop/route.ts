@@ -39,7 +39,7 @@ export async function POST(req: Request) {
             date: body.date,
             price: body.price,
             isTeamWorkshop: body.isTeamWorkshop,
-            maxTeamSize: body.isTeamWorkshop ? Number(body.maxTeamSize) : 1,
+            max_team_size: body.isTeamWorkshop ? Number(body.max_team_size) : 1,
             createdAt: new Date(),
             updatedAt: new Date(),
         };
@@ -64,7 +64,7 @@ export async function POST(req: Request) {
                 date: workshop_data.date,
                 price: Number(workshop_data.price) || 0,
                 isTeamWorkshop: workshop_data.isTeamWorkshop,
-                max_team_size: workshop_data.maxTeamSize || 1,
+                max_team_size: workshop_data.max_team_size || 1,
                 createdAt: new Date(),
                 updatedAt: new Date(),
                 image: workshop_data.image || ''
