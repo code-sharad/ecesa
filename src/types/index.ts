@@ -13,8 +13,9 @@ export interface Workshop {
     updatedAt?: Date;
     price?: number | null;
     status?: string;
-    isTeamWorkshop?: boolean;  
-    maxTeamSize?: number;  
+    isTeamWorkshop?: boolean;
+    max_team_size?: number;
+    students?: Student[] | null;
 }
 
 export interface Student {

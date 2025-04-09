@@ -1,21 +1,56 @@
-import GetEventById from "@/actions/GetEventById"
+'use client'
+
+// import GetEventById from "@/actions/GetEventById"
+import { Workshop } from "@/types";
 import { CalendarDays, MapPin, Users, IndianRupee, Users2, Timer, UserCheck } from 'lucide-react'
 import Image from 'next/image'
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
-export default async function EventPage({ params }: {
-    params: Promise<{ id: string }>
-}) {
-    const event = await GetEventById((await params).id);
+export default function EventPage() {
+    const { id } = useParams();
+    const [event, setEvent] = useState<Workshop>();
+
+    async function getEvent() {
+        const res = await fetch(`/api/workshop/${id}`);
+        if (!res.ok) {
+            throw new Error('Failed to fetch event data');
+        }
+        const data = await res.json();
+        setEvent(data.enrolledStudents[0]);
+    }
+
+    useEffect(() => {
+        getEvent();
+    }, [id])
+
+
+
+    async function handleEmail() {
+        const res = await fetch('/api/resend', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ to: 'bhadaitsharad7@gmail.com', subject: 'Hello from Next.js' })
+        });
+        if (!res.ok) {
+            throw new Error('Failed to send email');
+        } else {
+            console.log(res)
+        }
+        return res;
+    }
 
     return (
-        <div className="min-h-screen bg-black mt-12">
+        <div className="min-h-screen bg-black mt-24">
             <div className="container mx-auto px-4 py-12">
                 {event ? (
                     <div className="max-w-6xl mx-auto">
                         {/* Hero Section */}
                         <div className="relative rounded-t-2xl overflow-hidden h-[300px] mb-8">
                             <Image
-                                src={event.image}
+                                src={event.image || ''}
                                 alt={event.name}
                                 fill
                                 className="object-cover"
@@ -29,7 +64,7 @@ export default async function EventPage({ params }: {
                                         </span> */}
                                         {event.isTeamWorkshop && (
 
-                                            <span className="text-sm bg-orange-500/20 text-orange-400 rounded-md p-2">Registrations {event.students.length || 20}</span>
+                                            <span className="text-sm bg-orange-500/20 text-orange-400 rounded-md p-2">Registrations {event.students?.length || 20}</span>
                                         )}
                                     </div>
                                 </div>
@@ -74,7 +109,7 @@ export default async function EventPage({ params }: {
                                         <div className="space-y-6">
                                             <InfoItem icon={<Users className="w-5 h-5" />}
                                                 label="Remaining Seats"
-                                                value={`${event.capacity / event.students.length} people`} />
+                                                value={`${event.capacity / (event.students?.length || 20)} people`} />
                                             <InfoItem icon={<Users2 className="w-5 h-5" />}
                                                 label="Team Size"
                                                 value={`Maximum ${event.max_team_size} members`} />
@@ -105,19 +140,14 @@ export default async function EventPage({ params }: {
                                             <span className="capitalize text-orange-400">{event.status}</span>
                                         </div>
                                     </div>
-                                    <button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-200 shadow-lg shadow-orange-500/20">
+                                    <button onClick={handleEmail} className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-200 shadow-lg shadow-orange-500/20">
                                         Register Now
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                ) : (
-                    <div className="text-center py-12">
-                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto"></div>
-                        <p className="text-xl mt-4 text-zinc-400">Loading event details...</p>
-                    </div>
-                )}
+                ) : ''}
             </div>
         </div>
     )
