@@ -11,16 +11,17 @@ export default function EventPage() {
     const { id } = useParams();
     const [event, setEvent] = useState<Workshop>();
 
-    async function getEvent() {
-        const res = await fetch(`/api/workshop/${id}`);
-        if (!res.ok) {
-            throw new Error('Failed to fetch event data');
-        }
-        const data = await res.json();
-        setEvent(data.enrolledStudents[0]);
-    }
+
 
     useEffect(() => {
+        async function getEvent() {
+            const res = await fetch(`/api/workshop/${id}`);
+            if (!res.ok) {
+                throw new Error('Failed to fetch event data');
+            }
+            const data = await res.json();
+            setEvent(data.enrolledStudents[0]);
+        }
         getEvent();
     }, [id])
 

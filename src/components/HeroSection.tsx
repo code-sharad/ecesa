@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { colors } from "@/constants/colors";
 import { Zap } from "lucide-react";
 // import { motion } from "framer-motion";
-import UpcomingEventCard from "./events/UpcomingEventCard";
+// import UpcomingEventCard from "./events/UpcomingEventCard";
 
 
 
@@ -175,7 +175,7 @@ export default function HeroSection() {
 
             </div>
             <div className="max-w-[1200px] mx-auto">
-                <UpcomingEventCard />
+                {/* <UpcomingEventCard /> */}
             </div>
             {/* <motion.div initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
