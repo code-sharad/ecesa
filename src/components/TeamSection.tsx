@@ -94,7 +94,7 @@ const teamMembers: TeamMember[] = [
     },
     {
         name: "Shiral pranav sanjay ",
-        role: "Co- Event Head",
+        role: "Sports co-head ",
         image: "https://res.cloudinary.com/yt-file/image/upload/v1744296063/ecesa/team/ufcmfkh5cuaqiy7kaydc.png"
     },
     // Add more team members as needed
