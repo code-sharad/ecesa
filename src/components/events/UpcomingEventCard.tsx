@@ -12,12 +12,13 @@ import UpcomingEventSkeleton from "../skeleton/UpcomingEvent";
 
 function UpcomingEventCard() {
     const [upcoming_event, setUpcomingEvent] = useState<Workshop[]>();
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         getUpcomingEvents()
     }, []);
 
     const getUpcomingEvents = async () => {
+        setLoading(true)
         const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/workshop`, {
             method: "GET",
             headers: {
