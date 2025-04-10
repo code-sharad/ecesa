@@ -7,10 +7,12 @@ import Link from "next/link";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
 import { useEffect, useState } from "react";
 import { Workshop } from "@/types";
+import UpcomingEventSkeleton from "../skeleton/UpcomingEvent";
 
 
 function UpcomingEventCard() {
     const [upcoming_event, setUpcomingEvent] = useState<Workshop[]>();
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         getUpcomingEvents()
     }, []);
@@ -28,8 +30,11 @@ function UpcomingEventCard() {
         } else {
             setUpcomingEvent([...data].reverse());
         }
+        setLoading(false);
     }
-
+    if (loading) {
+        return <UpcomingEventSkeleton />
+    }
 
     return (
         <div className="flex flex-col justify-center items-center mb-12">
