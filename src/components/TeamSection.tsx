@@ -63,7 +63,7 @@ const teamMembers: TeamMember[] = [
         name: "Gauri Sutar",
         role: "Creative Head",
         image: "https://res.cloudinary.com/yt-file/image/upload/v1744226005/ecesa/team/evqrhhpfnkpuilqdbzxy.jpg"
-    },{
+    }, {
         name: "Yash Ghodele",
         role: "Event Head",
         image: "https://res.cloudinary.com/yt-file/image/upload/v1744226052/ecesa/team/xu9azqrryp50pyg8u7oy.jpg"
@@ -92,6 +92,11 @@ const teamMembers: TeamMember[] = [
         role: "Co- Event Head",
         image: "https://res.cloudinary.com/yt-file/image/upload/v1744295876/ecesa/team/tewbwylh5bljwxp9g9cj.png"
     },
+    {
+        name: "Shiral pranav sanjay ",
+        role: "Co- Event Head",
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744296063/ecesa/team/ufcmfkh5cuaqiy7kaydc.png"
+    },
     // Add more team members as needed
 ];
 
@@ -111,7 +116,7 @@ const TeamSection = () => {
                         <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-orange-200 via-orange-400 to-orange-200 
                                        animate-text-shimmer">Meet Our Team</span>
                     </h2>
-                   
+
                 </div>
 
                 {/* Team Grid */}
