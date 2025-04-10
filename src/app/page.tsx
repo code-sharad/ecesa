@@ -5,7 +5,7 @@ import EventsSection from "@/components/EventsSection";
 import CTASection from "@/components/CTASection";
 
 import Footer from "@/components/Footer";
-// import TeamSection from "@/components/TeamSection";
+import TeamSection from "@/components/TeamSection";
 import HeroSection from "@/components/HeroSection";
 
 // import { DockNav } from "@/components/docknav";
@@ -94,7 +94,7 @@ export default function Home() {
       {/* <DockNav /> */}
       <HeroSection />
       {/* <FeaturesSection /> */}
-      {/* <TeamSection /> */}
+      <TeamSection />
       {/* <AboutSection /> */}
       <EventsSection />
       {/* <ProjectsSection /> */}

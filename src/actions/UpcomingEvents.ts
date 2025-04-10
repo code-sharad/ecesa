@@ -10,9 +10,17 @@ const getUpcomingEvents = async () => {
             status: "upcoming"
         },
         include: { students: true },
-        cacheStrategy: { ttl: 60 }
+        // cacheStrategy: { ttl: 60 }
     });
-    return workshops.reverse();
+    console.log()
+    if (workshops.length === 0) {
+        return null
+        throw new Error("No events found")
+    } else {
+        return workshops.reverse();
+
+    }
+
 }
 
 export default getUpcomingEvents;

@@ -7,14 +7,14 @@ import { Button } from "@/components/ui/button";
 import { colors } from "@/constants/colors";
 import { Zap } from "lucide-react";
 // import { motion } from "framer-motion";
-// import UpcomingEventCard from "./events/UpcomingEventCard";
+import UpcomingEventCard from "./events/UpcomingEventCard";
 
 
 
 
 
 export default function HeroSection() {
-
+    
 
     return (
         <section className={`relative min-h-[90vh]  px-4 sm:px-6 lg:px-8 bg-${colors.background.primary} text-${colors.text.primary} overflow-hidden  sm:py-16 lg:py-20 flex flex-col gap-12   md:items-center`}>
@@ -175,7 +175,7 @@ export default function HeroSection() {
 
             </div>
             <div className="max-w-[1200px] mx-auto">
-                {/* <UpcomingEventCard /> */}
+                <UpcomingEventCard />
             </div>
             {/* <motion.div initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

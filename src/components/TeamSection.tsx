@@ -168,7 +168,7 @@ const TeamSection = () => {
                                         {member.social.email && (
                                             <a href={member.social.email}
                                                 className="text-orange-400/60 hover:text-orange-400 transition-colors
-                                                         transform hover:scale-110 transition-transform duration-300">
+                                                         transform hover:scale-110  duration-300">
                                                 <Inbox size={18} />
                                             </a>
                                         )}
