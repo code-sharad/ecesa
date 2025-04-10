@@ -80,7 +80,7 @@ const teamMembers: TeamMember[] = [
         role: "Co-treasurer",
         image: "https://res.cloudinary.com/yt-file/image/upload/v1744226231/ecesa/team/lwwqvizz6qamelxxua7t.jpg"
     }, {
-        name: "Mankar Atul  ",
+        name: "Gitanjali Mankar",
         role: "Creative co-head",
         image: "https://res.cloudinary.com/yt-file/image/upload/v1744226306/ecesa/team/othpdqjrv6a9hjzf9sly.png"
     }, {
@@ -90,7 +90,7 @@ const teamMembers: TeamMember[] = [
     }, {
         name: "Sakshi Kapure",
         role: "Co- Event Head",
-        image: "https://res.cloudinary.com/yt-file/image/upload/v1744226306/ecesa/team/othpdqjrv6a9hjzf9sly.png"
+        image: "https://res.cloudinary.com/yt-file/image/upload/v1744295876/ecesa/team/tewbwylh5bljwxp9g9cj.png"
     },
     // Add more team members as needed
 ];
